@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const Sequelize = require('sequelize');
 console.log(process.env.DATABASE_URL);
-const conn = new Sequelize(process.env.DATABASE_URL);
+const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost/acme_db_test');
 const { STRING } = Sequelize;
 const syncAndSeed = async()=> {
   await conn.sync({ force: true });
