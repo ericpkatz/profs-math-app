@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha spec.js",
-    "test:dev": "npm run test -- --watch"
+    "test:dev": "DATABASE_URL=postgres://localhost/acme_db_test npm run test -- --watch"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,9 @@
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^9.1.2"
+  },
+  "dependencies": {
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5"
   }
 }
